@@ -1,0 +1,106 @@
+<!-- Q9. Write a JavaScript program for validating REGISTRATION FORM. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration Validation</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 20px;
+      }
+
+      form {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .error-message {
+        color: #ff0000;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>User Registration</h1>
+
+    <form id="registrationForm" onsubmit="validateForm(event)">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div id="errorDisplay" class="error-message"></div>
+
+    <script>
+      function validateForm(event) {
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (
+          username.trim() === "" ||
+          email.trim() === "" ||
+          password.trim() === ""
+        ) {
+          displayError("All fields are required.");
+        } else if (!isValidEmail(email)) {
+          displayError("Please enter a valid email address.");
+        } else if (password.length < 6) {
+          displayError("Password should be at least 6 characters long.");
+        } else {
+          clearError();
+          console.log("Registration successful!");
+        }
+      }
+
+      function displayError(message) {
+        var errorDisplay = document.getElementById("errorDisplay");
+        errorDisplay.innerText = message;
+      }
+
+      function clearError() {
+        var errorDisplay = document.getElementById("errorDisplay");
+        errorDisplay.innerText = "";
+      }
+
+      function isValidEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+    </script>
+  </body>
+</html>

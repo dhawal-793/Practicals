@@ -1,0 +1,64 @@
+<!-- Q5. Write a HTML program to develop a static Web Page for Shopping Cart. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <style>
+      body {
+        margin: 20px;
+      }
+
+      #products {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .product {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+      }
+
+      #cart {
+        border: 1px solid #333;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      button {
+        padding: 8px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Online Shopping Cart</h1>
+
+    <div id="products">
+      <div class="product">
+        <h3>Product 1</h3>
+        <p>Description of Product 1.</p>
+        <p>$19.99</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <h3>Product 2</h3>
+        <p>Description of Product 2.</p>
+        <p>$24.99</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+
+    <div id="cart">
+      <h2>Shopping Cart</h2>
+      <p>Total: $310.00</p>
+    </div>
+  </body>
+</html>

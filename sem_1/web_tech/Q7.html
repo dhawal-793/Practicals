@@ -1,0 +1,43 @@
+<!--
+Q7. Write HTML for demonstration of cascading stylesheets.
+a. Embedded CSS.
+b. External CSS.
+c. Inline CSS.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Demonstration</title>
+
+    <style>
+      h1 {
+        color: #0066cc;
+      }
+
+      .embedded-style {
+        border: 2px solid #333;
+        padding: 10px;
+        margin: 20px;
+      }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="style_7.css" />
+  </head>
+  <body>
+    <h1>CSS Demonstration</h1>
+    <div class="embedded-style">
+      <p>This div has styles applied using embedded CSS.</p>
+    </div>
+
+    <div class="external-style">
+      <p>This div has styles applied using an external CSS file.</p>
+    </div>
+
+    <div style="border: 2px solid #ffcc00; padding: 10px; margin: 20px">
+      <p>This div has inline styles applied directly in the HTML element.</p>
+    </div>
+  </body>
+</html>

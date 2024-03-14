@@ -1,0 +1,62 @@
+<!--
+Q6.Design a web page using CSS which includes the following:
+a. Use different font and text styles
+b. Set a background image for both the page and single element on the page.
+c. Define styles for links
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Web Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            color: #333;
+            background-image: url('page-background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        p {
+            font-style: italic;
+        }
+
+        .styled-element {
+            background-image: url('element-background.jpg');
+            background-size: cover;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        a {
+            color: #990033;
+            text-decoration: none;
+            font-weight: bold;
+         }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Styled Web Page</h1>
+        <p>This is a demonstration of different font and text styles, background images, and link styles.</p>
+    </header>
+
+    <section class="styled-element">
+        <h2>Styled Section</h2>
+        <p>This section has a different background image and custom styling.</p>
+        <a href="#">Click me</a> <!-- Example link within the styled element -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Styled Web Page. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!-- Q11. Write a JavaScript program that will create a two dimensional array. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two-Dimensional Array</title>
+    <script>
+      function createTwoDimensionalArray(rows, columns) {
+        var twoDArray = [];
+
+        for (var i = 0; i < rows; i++) {
+          twoDArray[i] = [];
+          for (var j = 0; j < columns; j++) {
+            twoDArray[i][j] = i * columns + j + 1;
+          }
+        }
+
+        return twoDArray;
+      }
+
+      function displayArray() {
+        var rows = parseInt(document.getElementById("rows").value);
+        var columns = parseInt(document.getElementById("columns").value);
+        var twoDArray = createTwoDimensionalArray(rows, columns);
+
+        var result = "Two-Dimensional Array:\n";
+        for (var i = 0; i < rows; i++) {
+          for (var j = 0; j < columns; j++) {
+            result += twoDArray[i][j] + "\t";
+          }
+          result += "\n";
+        }
+        document.getElementById("result").innerText = result;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Two-Dimensional Array</h1>
+
+    <label for="rows">Enter the number of rows:</label>
+    <input type="number" id="rows" required />
+
+    <label for="columns">Enter the number of columns:</label>
+    <input type="number" id="columns" required />
+
+    <button onclick="displayArray()">Create Two-Dimensional Array</button>
+
+    <pre id="result"></pre>
+  </body>
+</html>
